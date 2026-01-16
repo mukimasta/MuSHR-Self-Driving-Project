@@ -9,6 +9,7 @@ I wanted to build an intelligent system that actually runs in the real world—w
 Watching the car succeed, get stuck, and gradually run better over time was the most meaningful part of this project. And it’s this process that forms the most valuable engineering experience. -->
 
 
+
 ## Overview
 
 The system follows a classic autonomous driving stack:
@@ -169,4 +170,10 @@ flowchart TB
 
 
 
+## Demonstration
 
+### Real-world Demo
+![Demo](./demo/demo.jpg)
+
+### Obstacle Avoidance
+![Obstacle Avoidance](./demo/obstacle_avoidance.gif)
