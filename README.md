@@ -37,7 +37,7 @@ flowchart TB
     subgraph Stack [Autonomous System]
         direction TB
         Plan[🛣️ Planning<br/><b>PRM + Lazy A*</b>]
-        Ctrl[🎮 Control<br/><b>PID / Pure Pursuit / MPC</b>]
+        Ctrl[🎮 Control<br/><b>MPC</b>]
         Loc[📍 Localization<br/><b>Particle Filter</b>]
     end
 
@@ -137,13 +137,13 @@ flowchart TB
     I_Plan -->|"Ref Speed"| Generate
     
     %% Cost Dependencies
-    Generate -->|"Future Path Candidates"| C_Dist
+    Generate -->|"Path Candidates"| C_Dist
     I_Plan -->|"Ref Path"| C_Dist
     
-    Generate -->|"Future Path Candidates"| C_Map
+    Generate -->|"Path Candidates"| C_Map
     I_Map -->|"Static Map"| C_Map
     
-    Generate -->|"Future Path Candidates"| C_Live
+    Generate -->|"Path Candidates"| C_Live
     I_Scan -->|"Real-time Obstacles"| C_Live
     
     Generate -->|"Steering Angles"| C_Smooth
