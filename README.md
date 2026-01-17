@@ -82,9 +82,27 @@ flowchart TB
     class Car output
 ```
 
+
+
+The Multi-agent System for non-Holonomic Racing (MuSHR) is an open-source robotic hardware and software platform from University of Washington for learning and researching AI in the setting of autonomous vehicles and mobile robotics.
+
+[MuSHR: The UW Open Racecar Project](https://mushr.io/)
+
+
 ## Highlights
 
-**Real-time Obstacle Avoidance & Smooth Path Following**
+### Real-time Obstacle Avoidance
+
+**Motivation:** The baseline controller only tracks the pre-planned path, sometimes it collides with walking pedestrians or unmapped obstacles.
+
+**Idea:** To use existing LiDAR measurements to detect obstacles, convert their coordinates, and then penalize the candidate trajectories that are too close to the obstacles in MPC cost function.
+
+
+### Smooth Path Following
+
+**Motivation:** The original MPC often **oscillates** (keeps steering left/right), which reduces the stability and comfort.
+
+**Idea:** Add a steering smoothness penalty as a cost function to the MPC algorithm.
 
 ```mermaid
 flowchart TB
@@ -167,6 +185,7 @@ flowchart TB
     class Generate,C_Dist,C_Map,Select internal
     class Car output
 ```
+
 
 
 
